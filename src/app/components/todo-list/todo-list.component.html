@@ -1,0 +1,48 @@
+<section class="" style="background-color: #e2d5de">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card py-4" style="border-radius: 15px">
+          @for(task of tasks; track task.id){
+          <div class="card-body ">
+            <ul class=" list-group-flush">
+              <!-- <li>{{ task.name }}</li> -->
+              <div class="d-grid  gap-2 d-md-flex justify-content-md-end align-items-center ">
+                <span class="list-group-item w-100" [ngClass]="{ 'completed': task.completed }">{{ task.name }}</span>
+            <div class="d-flex  justify-content-evenly  align-items-center ">
+              <button class="butt btn btn-danger " (click)="onRemoveTodo(task.id)">Delete</button>
+              <button class="butt btn btn-success " (click)="onToggleCompletion(task.id)">
+                {{ task.completed ? 'Undo' : 'Complete' }}
+              </button>
+            </div>
+              </div>
+
+
+            </ul>
+          </div>
+        }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- <button (click)="toggleCompletion(task.id)">Toggle Completion</button> -->
+
+              <!-- <button class="btn btn-danger" (click)="removeTodo(task.id)">Delete</button>
+                    <button class="btn btn-success" (click)="toggleCompletion(task.id)">Toggle Completion</button> -->
+
+
+
+              <!-- <li *ngFor="let todo of todos">{{ todo.text }}</li>
+                <li *ngFor="let todo of todos">{{ todo }}</li> -->
+
+              <!-- <button (click)="toggleCompletion(tasks.id)">Toggle Completion</button> -->
+
+
+
+
+              <!-- <li *ngFor="let todo of todos" [class.completed]="todo.completed">
+                {{ todo.content }}
+                <button (click)="deleteTodo(todo.id)">Delete</button>
+                <button (click)="toggleCompletion(todo.id)">Toggle Completion</button>
+              </li> -->
